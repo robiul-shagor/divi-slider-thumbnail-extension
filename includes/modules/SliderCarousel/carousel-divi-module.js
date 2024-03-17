@@ -1,7 +1,13 @@
 jQuery(document).on('ready', function(){
+    var mainSetting = JSON.parse(jQuery('.robiul_slider_carousel_main').attr('data-settings'));
+    var thumbSetting = JSON.parse(jQuery('.robiul_slider_thumb').attr('data-settings'));
+
+    console.log(thumbSetting);
+
     jQuery('.robiul_slider_carousel_main').slick({
       dots: false,
-      arrows: true,
+      arrows: mainSetting.arrows,
+      autoplay: mainSetting.autoplay,
       infinite: false,
       speed: 300,
       slidesToShow: 1,
@@ -14,39 +20,12 @@ jQuery(document).on('ready', function(){
       arrows: false,
       infinite: false,
       speed: 300,
-      slidesToShow: 6,
+      slidesToShow: thumbSetting.slidesToShow,
       slidesToScroll: 1,
       asNavFor: '.robiul_slider_carousel_main',
       spaceBetween: 20,
       centeredSlides: true,
       focusOnSelect: true,
-      responsive: [
-        {
-          breakpoint: 1140,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
-      ]
+      responsive: thumbSetting.responsive
     });
 });

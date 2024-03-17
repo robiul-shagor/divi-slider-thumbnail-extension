@@ -21,10 +21,19 @@
     height: auto !important;
     padding: 0px;
 }
+.robiul_slider_thumb .slick-slide {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 0 !important;
+}
+
+.slick-prev, .slick-next {
+    z-index: 99;
+}
 
 .robiul_slider_carousel_main .slider-inner {
     background: #ffffff94;
-    min-width: 450px;
+    max-width: 450px;
     border-bottom: 5px solid #ff7016;
     padding: 30px;
 }
@@ -123,7 +132,7 @@ p:empty {
         padding: 30px;
     }
     .robiul_slider_carousel_main .slider-inner {
-        min-width: 90%;
+        max-width: 90%;
         margin-left: auto;
         margin-right: auto;
     }

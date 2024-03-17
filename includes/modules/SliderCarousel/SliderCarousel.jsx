@@ -83,7 +83,7 @@ class SliderCarousel extends Component {
                       <div className='slider-descriptions'>
                         { <div dangerouslySetInnerHTML={{ __html: item.props.attrs.slider_content }} /> }
                       </div>
-                      <a href={item.props.attrs.button_url}>{item.props.attrs.button_text}</a>
+                      <a className='slider-buttons' href={item.props.attrs.button_url}>{item.props.attrs.button_text}</a>
                     </div>
                   </div>
                 </div>
